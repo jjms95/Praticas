@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011013301) do
+ActiveRecord::Schema.define(version: 20161011030938) do
+
+  create_table "comentarios_posts", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "contenido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comentarios_posts_on_post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "titulo"
