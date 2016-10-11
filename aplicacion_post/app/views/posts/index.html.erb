@@ -13,7 +13,7 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
+      <tr id="<%= dom_id(post)%>">
         <td><%= post.titulo %></td>
         <td><%= post.cuerpo %></td>
         <td><%= link_to 'Show', post %></td>
