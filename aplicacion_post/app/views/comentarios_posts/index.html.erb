@@ -1,0 +1,12 @@
+<h1><%= @post.titulo %></h1>
+
+
+<ul class="comentarios_post">
+	<%= @post.comentarios_posts.each do |comentario_post| %>
+	<li><%= comentario_post.contenido %></li>
+	<% end %>
+</ul>
+
+<p>
+	<%= link_to "New Comment",new_post_comentarios_post_path %>	
+</p>

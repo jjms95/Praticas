@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-	has_many :comentarios_post
+	has_many :comentarios_posts
 	validates :titulo, presence: true
 	validates :titulo, length: { minimum: 3 }
 	validates :cuerpo, presence: true

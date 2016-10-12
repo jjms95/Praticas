@@ -23,9 +23,9 @@ describe "viendo la lista de comentarios" do
 		expect(page.all("ul.comentarios_post li").size).to eq(0)
 	end
 
-	it "muestra comentarios cuando los los post tienen." do
-		post.comentarios_post.create(contenido: "esta bien")
-		post.comentarios_post.create(contenido: "no me gusta")
+	it "muestra comentarios cuando los post los tienen." do
+		post.comentarios_posts.create(contenido: "esta bien")
+		post.comentarios_posts.create(contenido: "no me gusta")
 
 		visitar_comentario_post(post)
 		
