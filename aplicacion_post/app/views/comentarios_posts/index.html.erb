@@ -2,7 +2,7 @@
 
 
 <ul class="comentarios_post">
-	<%= @post.comentarios_posts.each do |comentario_post| %>
+	<% @post.comentarios_posts.each do |comentario_post| %>
 	<li><%= comentario_post.contenido %></li>
 	<% end %>
 </ul>
