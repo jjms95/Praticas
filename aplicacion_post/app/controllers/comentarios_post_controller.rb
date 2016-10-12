@@ -1,5 +1,5 @@
 class ComentariosPostController < ApplicationController
   	def index
-  		@comentarios_posts=ComentariosPost.all
+  		@post=Post.find(params[:post_id])
 	end
 end
