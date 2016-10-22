@@ -3,10 +3,13 @@
 
 <ul class="comentarios_post">
 	<% @post.comentarios_posts.each do |comentario_post| %>
-	<li><%= comentario_post.contenido %></li>
+	<li id="<%= dom_id(comentario_post)%>">
+		<%= comentario_post.contenido %>
+		<%= link_to "Editar Comentario",edit_post_comentarios_post_path(comentario_post) %>
+	</li>
 	<% end %>
 </ul>
 
 <p>
-	<%= link_to "New Comment",new_post_comentarios_post_path %>	
-</p>
+	<%= link_to "Nuevo Comentario",new_post_comentarios_post_path %>	  
+</p> 
