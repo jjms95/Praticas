@@ -1,0 +1,14 @@
+<% if @comentarios_post.errors.any? %>
+  <div id="error_explanation">
+    	<h2><%= pluralize(@comentarios_post.errors.count, "error") %> prohibited this comentario post from being saved:</h2>
+    	<ul>
+    	  <% @comentarios_post.errors.full_messages.each do |message| %>
+      	  <li><%= message %></li>
+    		<% end %>
+  	</ul>
+  </div>
+<% end %>
+
+<%= form.label :contenido %>
+<%= form.text_field :contenido %>
+<%= form.submit "Guardar" %> 
