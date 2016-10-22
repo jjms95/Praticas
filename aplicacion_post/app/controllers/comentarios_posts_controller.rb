@@ -37,6 +37,18 @@ class ComentariosPostsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@post = Post.find(params[:post_id])
+		@comentarios_post = @post.comentarios_posts.find(params[:id])
+		if @comentarios_post.destroy
+			flash[:success] = "El comentario se elimino."
+			redirect_to post_comentarios_posts_path
+		else 
+			flash[:error] = "hubo un error al eliminar el comentario."
+			render action: :new
+		end
+	end
+
 	def url_options
 		{post_id: params[:post_id]}.merge(super)
 	end

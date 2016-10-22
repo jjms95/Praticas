@@ -6,6 +6,7 @@
 	<li id="<%= dom_id(comentario_post)%>">
 		<%= comentario_post.contenido %>
 		<%= link_to "Editar Comentario",edit_post_comentarios_post_path(comentario_post) %>
+		<%= link_to "Eliminar Comentario",post_comentarios_post_path(comentario_post), method: :delete, data: {comfirm: "Esta seguro?"} %>
 	</li>
 	<% end %>
 </ul>
