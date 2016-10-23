@@ -4,13 +4,6 @@ describe "agregando comentarios" do
 	let!(:post){Post.create(titulo: "mi post", cuerpo: "este es el cuerpo de mi post")}
 	let!(:comentario_post){post.comentarios_posts.create(contenido: "este es el cuerpo un comentario de mi post")}
 
-	def visitar_comentario_post(p)
-		visit "/posts"
-		within "#post_#{p.id}" do
-			click_link "Comentarios"
-		end
-	end	
-
 	it "Cambia un comentario en un post exitosamente" do
 		visitar_comentario_post(post)
 
